@@ -72,7 +72,7 @@ if api_key:
     try:
         ggi.configure(api_key=api_key)
         # Corrected the model name to the current stable version
-        model = ggi.GenerativeModel("gemini-1.0-pro")
+        model = ggi.GenerativeModel("gemini-2.5-flash")
         chat = model.start_chat()
     except Exception as e:
         st.error(f"Failed to configure Google AI: {e}")
