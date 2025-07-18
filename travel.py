@@ -71,7 +71,8 @@ api_key = st.sidebar.text_input("Enter your Google AI API Key", type="password",
 if api_key:
     try:
         ggi.configure(api_key=api_key)
-        model = ggi.GenerativeModel("gemini-pro")
+        # Corrected the model name to the current stable version
+        model = ggi.GenerativeModel("gemini-1.0-pro")
         chat = model.start_chat()
     except Exception as e:
         st.error(f"Failed to configure Google AI: {e}")
