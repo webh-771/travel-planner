@@ -1,6 +1,6 @@
 import streamlit as st
 import google.generativeai as ggi
-from datetime import date
+from datetime import date, timedelta
 import matplotlib.pyplot as plt
 
 # --- Page Configuration ---
@@ -199,7 +199,7 @@ if api_key:
             start_date = st.date_input("Start date", min_value=date.today())
         with col2:
             to_destination = st.selectbox("Where do you want to go?", cities, index=1)
-            end_date = st.date_input("End date", min_value=start_date, value=start_date + st.delta(days=6))
+            end_date = st.date_input("End date", min_value=start_date, value=start_date + timedelta(days=6))
 
         if start_date > end_date:
             st.error("End date must be on or after the start date.")
